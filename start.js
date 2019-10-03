@@ -16,4 +16,4 @@ if(!app){
 
 app.use(express.static('public'));
 
-app.get('/', router.serveHomepage);
+var routes = router.route(app);

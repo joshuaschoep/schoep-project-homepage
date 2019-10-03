@@ -3,6 +3,16 @@ const path = require('path');
 
 const directory = path.resolve(__dirname + '/../public/');
 
+exports.route = function(app){
+    app.get('/', function(req, res){
+        res.sendFile(directory + '/home.html', staticCallback);
+    });
+
+    app.get('/info', function(req, res){
+        res.sendFile(directory + '/info/info.html', staticCallback);
+    });
+}
+
 function staticCallback(err){
     if(err){
         logger.log(500, err);
@@ -19,8 +29,4 @@ exports.redirectToHttps = function(req, res){
     res.redirect("https://" + request.headers.host + url, function(){
         logger.log(301, "Redirected HTTP request to HTTPS");
     });
-}
-
-exports.serveHomepage = function(req, res){
-    res.sendFile(directory + '/home.html', staticCallback);
 }
