@@ -1,40 +1,19 @@
-var express = require('express');
-var path = require('path')
-var fs = require('fs')
-var http = require('http')
-var https = require('https')
+const express = require('express');
+const router = require('./routing/router.js');
+const server = require('./server/server.js');
+const logger = require('./logger/logger.js');
 
-const httpsOptions = {
-	key: fs.readFileSync('/etc/letsencrypt/live/schoepproject.com/privkey.pem', 'utf8'),
-	cert: fs.readFileSync('/etc/letsencrypt/live/schoepproject.com/cert.pem', 'utf8'),
-	ca: fs.readFileSync('/etc/letsencrypt/live/schoepproject.com/chain.pem', 'utf8')
-};
+var app = server.startHttpsServer();
+var httpapp = server.startHttpServer();
 
-const HTTPPORT = 80;
-const HTTPSPORT = 443;
-
-const app = express();
-const httpapp = express();
-const httpsServer = https.createServer(httpsOptions, app);
-const httpServer = http.createServer(httpapp);
+if(!app){
+	logger.log(301, "Rerouting HTTPS data to HTTP server");
+	app = httpapp;
+}else{
+	logger.log(200, "Rerouting HTTP data to HTTPS server");
+	httpapp.use(router.redirectToHttps);
+}
 
 app.use(express.static('public'));
 
-httpapp.use(function(request, response){
-	var url = request.headers.url;
-	if(url == undefined){
-		url = "";
-	}
-	response.redirect("https://" + request.headers.host + url);
-});
-
-app.get('/', function(req, res){
-	console.log("Get request for homepage");
-	res.sendFile(__dirname + '/public/home.html');
-});
-
-console.log("Listening on port", HTTPSPORT);
-httpsServer.listen(HTTPSPORT);
-
-console.log("Listening for redirect port", HTTPPORT);
-httpServer.listen(HTTPPORT)
+app.get('/', router.serveHomepage);
