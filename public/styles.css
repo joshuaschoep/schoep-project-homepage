@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1{
+    font-size: 24px;
+}
+
+h2{
+    font-size: 20px;
+}
+
+h3{
+    font-size: 18px;
+}
+
+h4, h5, h6{
+    font-size: 16px;
+}
+
+p, a{
+    font-size: 14px;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    transition-duration: 0.18s;
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.left{
+    float: left;
+}
+
+header, nav, .bottom{
+    display: block;
+    overflow: hidden;
+    width: 100%;
+}
+
+header{
+    background-color: #484848;
+    color: #fff;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; /* Webkit */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE 10  */
+    -o-user-select: none;
+    user-select: none;
+}
+
+#logo{
+    width: 64px;
+    margin: 16px;
+    margin-left: 24px;
+    float: left;
+    display: block;
+}
+
+header h1{
+    font-size: 64px;
+    padding: 0px;
+    line-height: 64px;
+    margin: 16px;
+}
+
+header h2{
+    font-size: 16px;
+    line-height: 26px;
+    margin-top: 68px;
+    margin-right: 8px;
+    max-width: 360px;
+    text-align: right;
+}
+
+nav{
+    background-image: linear-gradient(to right, #6461a0, #314cb6);
+    font-size: 12px;
+    background-color: #888;
+}
+
+nav a{
+    margin: 0;
+    font-size: 20px;
+    padding: 10px 32px;
+    background-color: transparent;
+}
+
+a:hover, a:focus{
+    background-color: rgba(255,255,255,0.2);
+}
+
+a:active{
+    background-color: rgba(0,0,0,0.1);
+}
+
+#login{
+    float: right;
+}
+
+@media screen and (max-width: 1080px){
+    header h2{
+        display: none;
+    }
+}
+@media screen and (max-width: 720px){
+    header h1{
+        font-size: 8vw;
+        line-height: 8vw;
+    }
+    
+    nav{
+        padding: 0;
+        text-align: center;
+        box-shadow: 0px -5px 5px rgba(0,0,0,0.3);
+        position: fixed;
+        bottom: 0;
+        z-index: 10;
+    }
+
+    nav a, nav #login{
+        font-size: 16px;
+        padding-left: 0;
+        padding-right: 0;
+        border: 0;
+        margin: 0;
+        width: 30vw;
+        float: none;
+        display: inline-block;
+        text-align: center;
+    }
+
+    #logo{
+        width: 8vw;
+    }
+}
+@media screen and (max-width: 540px){
+    header h1{
+        font-size: 12vw;
+        line-height: 12vw;
+    }
+
+    #logo{
+        width: 12vw;
+    }
+}
