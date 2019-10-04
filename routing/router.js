@@ -26,7 +26,7 @@ exports.redirectToHttps = function(req, res){
     if(url == undefined){
         url = "";
     }
-    res.redirect("https://" + request.headers.host + url, function(){
+    res.redirect("https://" + req.headers.host + url, function(){
         logger.log(301, "Redirected HTTP request to HTTPS");
     });
 }
