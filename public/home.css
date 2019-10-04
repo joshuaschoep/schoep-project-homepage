@@ -37,7 +37,7 @@ a{
     margin-right: 30px;
 }
 
-a:hover{
+a:hover, a:focus{
     background-color: #7874c0;
     transition-duration: 0.05s;
 }
