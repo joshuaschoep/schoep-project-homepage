@@ -8,6 +8,7 @@ exports.getHttpsSettings = function(){
             ca: fs.readFileSync('/etc/letsencrypt/live/schoepproject.com/chain.pem', 'utf8')
         };
     }catch(err){
+        console.log(err);
         return null;
     }
 }
