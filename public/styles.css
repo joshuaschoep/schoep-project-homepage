@@ -125,6 +125,7 @@ nav a:active{
     padding: 4px 16px;
     margin: 5px 24px;
     margin-left: 10px;
+    float: right;
 }
 
 @media screen and (max-width: 1080px){
