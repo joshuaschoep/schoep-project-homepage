@@ -1,0 +1,41 @@
+nav{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    background-image: linear-gradient(to right, #6461a0, #314cb6);
+
+    ::ng-deep a{
+        float: left;
+        display: block;
+        padding: 10px 32px;
+        font-size: 1.3rem;
+    }
+
+    app-dropdown{
+        float: left;
+    }
+
+    #login{
+        float: right;
+        padding: 4px 20px;
+        border: 1px solid rgba(255,255,255,0.32);
+        border-radius: 20px;
+        margin: 5px 20px;
+    }
+}
+
+::ng-deep a,::ng-deep a:visited {
+    color: #fff;
+    text-decoration: none;
+    transition-duration: 0.18s;
+}
+
+::ng-deep a:focus, ::ng-deep a:hover{
+    background-color: rgba(255,255,255,0.16);
+    transition-duration: 0.07s;
+}
+
+app-dropdown{
+    display: block;
+    overflow: hidden;
+}

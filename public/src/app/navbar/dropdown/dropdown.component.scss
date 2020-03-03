@@ -1,0 +1,44 @@
+div.dropdown {
+    overflow: hidden;
+    display: block;
+    
+    div.content {
+        height: 0;
+        opacity: 0;
+        transition: all 0.24s ease-out;
+        transform: scaleY(0);
+        transform-origin: 50% 0%;
+        position: absolute;
+    }
+
+    a {
+        float: none;
+        padding: 10px 20px;
+    }
+}
+
+div.dropdown:hover, div.dropdown:focus {
+    div.content{
+        height: auto;
+        opacity: 1;
+        transition: all 0.12s ease-in;
+        transform: scaleY(1);
+        display: block;
+    }
+}
+
+div.content{
+    min-width: 10rem;
+    background-color: #eee;
+
+    a {
+        box-sizing: border-box;
+        width: 100%;
+        color: black;
+        float: none;
+    }
+
+    a:hover, a:focus {
+        background-color: #6461a032;
+    }
+}

@@ -1,0 +1,5 @@
+<nav>
+    <ng-content></ng-content>
+    <app-dropdown *ngFor="let section of (getSections() | async)" section_title="{{section.title}}" section_id="{{section.id}}"></app-dropdown>
+    <a href="/login" id="login"><i class="fas fa-sign-in-alt"></i></a>
+</nav>

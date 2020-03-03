@@ -1,0 +1,52 @@
+header {
+    background-color: #484848;
+    color: #fff;
+    display: block;
+    width: 100%;
+
+    .flex{
+        display: flex;
+        padding: 0;
+        padding-right: 0.6rem;
+
+        #logo {
+            margin-left: 1.4rem;
+            margin-right: 1.4rem;
+        }
+
+        h1{
+            margin-top: auto;
+            margin-bottom: auto;
+            font-weight: normal;
+            margin: 1rem 0;
+        }
+
+        h2{
+            margin-top: auto;
+            margin-left: auto;
+            margin-bottom: 0;
+            font-weight: normal;
+            padding-bottom: 0.3rem;
+
+        }
+    }
+
+    #logo {
+        width: 4rem;
+        transition: ease-in-out 1.8s;
+    }
+
+    #logo:hover {
+        transform: rotate(720deg);
+        transition: ease-in-out 1.8s;
+    }
+
+    h1 {
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+
+    h2 {
+        font-size: 1.1em;
+    }
+}
