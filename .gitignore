@@ -63,3 +63,6 @@ typings/
 # npm packaging file
 package.json
 package-lock.json
+
+# config files
+.config
